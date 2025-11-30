@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CozyTaste Restaurant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <!-- Header Section -->
+  <header>
+    <div><strong>CozyTaste</strong></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Welcome to CozyTaste</h1>
+    <p>Delicious food made with love</p>
+    <button onclick="openReservation()">Book a Table</button>
+    <p>Open 11:00am to 05:00am</p>
+  </section>
+
+  <!-- Custom Alert -->
+  <div id="customAlert" class="custom-alert"></div>
+
+  <!-- Reservation Form Popup -->
+  <div class="overlay" id="overlay" onclick="closeReservation()"></div>
+  <div class="reservation-form" id="reservationForm">
+    <h3>Reserve a Table </h3>
+    <form onsubmit="handleSubmit(event)">
+      <label>Name:</label><br><input class="input" type="text" required><br>
+      <label>Email:</label><br><input class="input" type="email" required><br>
+      <label>Date:</label><br><input class="input" type="date" required><br>
+      <label>Time:</label><br><input class="input" type="time" required><br>
+      <label>Guests:</label><br><input class="input" type="number" min="1" required><br><br>
+      <button id="input-submit" class="input" type="submit">Submit</button>
+      <button id="input-cancel" class="input" type="button" onclick="closeReservation()">Cancel</button>
+    </form>
+  </div>
+
+  <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+    <h2>Our Menu</h2>
+    
+    <div class="menu-category">
+      <h3>Roll Paratha</h3>
+      <divclass="map-div">
+      <img class="menu-image" src="special shawarma.jpg" alt="Roll Paratha"></div>
+      <div class="menu-item"><span>Chicken Roll</span><span>Rs. 250</span></div>
+      <div class="menu-item"><span>Cheese Roll</span><span>Rs. 300</span></div>
+      <div class="menu-item"><span>Chicken Cheese Roll</span><span>Rs. 330</span></div>
+      <div class="menu-item"><span>Twister Zinger Roll</span><span>Rs. 400</span></div>
+      <div class="menu-item"><span>Seekh Kabab Roll</span><span>Rs. 400</span></div>
+    </div>
+    
+    <div class="menu-category">
+      <h3>Shawarma</h3>
+      <img class="menu-image" src="chicken shawarma.jpg" alt="Shawarma">
+      <div class="menu-item"><span>Chicken Shawarma</span><span>Rs. 200</span></div>
+      <div class="menu-item"><span>Chicken Cheese Shawarma</span><span>Rs. 230</span></div>
+      <div class="menu-item"><span>Zinger Shawarma</span><span>Rs. 300</span></div>
+      <div class="menu-item"><span>Zinger Cheese Shawarma</span><span>Rs. 330</span></div>
+      <div class="menu-item"><span>Special Shawarma</span><span>Rs. 350</span></div>
+    </div>
+    
+    <div class="menu-category">
+      <h3>Pizza</h3>
+      <img class="menu-image" src="special pizza.jpg" alt="Pizza">
+      <div class="menu-item"><span>Chicken Tikka</span><span>Rs. 500/900/1250/1600</span></div>
+      <div class="menu-item"><span>BBQ Pizza</span><span>Rs. 500/900/1250/1600</span></div>
+      <div class="menu-item"><span>Season Pizza</span><span>Rs. 500/900/1250/1600</span></div>
+      <div class="menu-item"><span>Cheese Lover</span><span>Rs. 500/900/1250/1600</span></div>
+      <div class="menu-item"><span>Veggie Supreme</span><span>Rs. 500/900/1250/1600</span></div>
+      <div class="menu-item"><span>Crown Crust Pizza</span><span>Rs. 650/1300/1800/2300</span></div>
+      <div class="menu-item"><span>Stuff Crust Pizza</span><span>Rs. 650/1300/1800/2300</span></div>
+    </div>
+    
+    <div class="menu-category">
+      <h3>Burgers</h3>
+      <img class="menu-image" src="special burger.jpeg" alt="Burgers">
+      <div class="menu-item"><span>Zinger Burger</span><span>Rs. 400</span></div>
+      <div class="menu-item"><span>Chicken Burger</span><span>Rs. 350</span></div>
+      <div class="menu-item"><span>Tower Burger</span><span>Rs. 600</span></div>
+      <div class="menu-item"><span>Cheese Burger</span><span>Rs. 450</span></div>
+    </div>
+    
+    <div class="menu-category">
+      <h3>Fries & Sides</h3>
+      <img class="menu-image" src="special fries.jpg" alt="Fries">
+      <div class="menu-item"><span>Fries Regular</span><span>Rs. 200</span></div>
+      <div class="menu-item"><span>Fries Masala</span><span>Rs. 230</span></div>
+      <div class="menu-item"><span>Loaded Fries</span><span>Rs. 350</span></div>
+      <div class="menu-item"><span>Cheese Fries</span><span>Rs. 300</span></div>
+      <div class="menu-item"><span>Nuggets (6 pcs)</span><span>Rs. 300</span></div>
+    </div>
+    
+    <div class="menu-category">
+      <h3>Broast</h3>
+      <img class="menu-image" src="chicken broast.jpg" alt="Broast">
+      <div class="menu-item"><span>Broast Piece (1)</span><span>Rs. 220</span></div>
+      <div class="menu-item"><span>Broast 2 pcs</span><span>Rs. 430</span></div>
+      <div class="menu-item"><span>Broast with Fries</span><span>Rs. 500</span></div>
+    </div>
+    
+    <div class="menu-category">
+      <h3>Drinks</h3>
+      <img class="menu-image" src="7up regular.jpg" alt="Drinks">
+      <div class="menu-item"><span>Cold Drink Regular</span><span>Rs. 80</span></div>
+      <div class="menu-item"><span>Cold Drink 1.5L</span><span>Rs. 160</span></div>
+      <div class="menu-item"><span>Mineral Water</span><span>Rs. 50</span></div>
+    </div>
+    
+    <div class="menu-category">
+      <h3>Deals</h3>
+      <img class="menu-image" src="pizza deal.jpg" alt="Deals">
+      <div class="menu-item"><span>Deal 1: 1 Shawarma + Fries + Drink</span><span>Rs. 450</span></div>
+      <div class="menu-item"><span>Deal 2: 1 Zinger + Fries + Drink</span><span>Rs. 600</span></div>
+      <div class="menu-item"><span>Deal 3: 1 Pizza + 2 Cold Drinks</span><span>Rs. 950</span></div>
+      <div class="menu-item"><span>Deal 4: 2 Chicken Rolls + 2 Drinks</span><span>Rs. 600</span></div>
+      <div class="menu-item"><span>Deal 5: 1 Tower Burger + Loaded Fries + Drink</span><span>Rs. 750</span></div>
+    </div>
+  </section>
+  <!-- About Section -->
+  <section id="about" class="dark">
+    <h2 style="text-align:center; padding: 1rem;">About Us</h2>
+    <p style="text-align:center; max-width: 600px; margin: auto;">
+      CozyTaste was founded with a passion for great food and warm hospitality.
+      Our chefs bring recipes from around the world to your table. Visit us to taste joy.
+    </p>
+
+    <h2 style="text-align:center; padding: 1rem;">Contact Us</h2>
+    <div style="text-align:center;">
+      <p>📍 123 Flavor Street, Foodie Town</p>
+      <p>📞 +123-456-7890</p>
+      <p>📧 contact@cozytaste.com</p>
+      <div class="map-div">
+      <iframe src="https://maps.google.com/maps?q=foodie%20town&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="90%" height="300" style="border:0; margin-top: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+    <br>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CozyTaste. All rights reserved.</p>
+    <p>Follow us on social media</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

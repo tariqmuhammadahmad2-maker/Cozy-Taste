@@ -1,0 +1,204 @@
+:root {
+  --primary: #8b0000;
+  --bg-light: #fff8f0;
+  --bg-dark: #1e1e1e;
+  --text-light: #333;
+  --text-dark: #333;
+  --font: 'Segoe UI', sans-serif;
+}
+
+/* Base Styling */
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  margin: 0;
+  font-family: var(--font);
+  transition: all 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary);
+  color: white;
+  position: fixed;
+  width: 94%;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.hero {
+  background: url('italian-food.jpg') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-shadow: 0 0 10px black;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero button {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.menu-section {
+  padding: 2rem;
+  background-color: #FFE5D3;
+}
+
+.menu-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.menu-category {
+  margin-bottom: 2rem;
+}
+
+.menu-category h3 {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-image {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.toggle-mode {
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  margin-right: 30px;
+}
+
+/* Reservation Popup */
+.reservation-form {
+  color: black;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FFE5D3;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.input {
+  background-color: #FFE5D3;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: #8b0000;
+  text-align: center;
+  width: 200px;
+  height: 2em;
+  outline: none;
+}
+
+#input-submit{
+  width: 80px;
+  margin-top: 5px;
+  margin-left: 5px;
+  float: right;
+}
+
+#input-cancel {
+  width: 80px;
+  margin-top: 5px;
+  margin-right: 5px;
+  float: left;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode header,
+.dark-mode footer {
+  background-color: #000;
+}
+
+/* Custom Alert Styling */
+.custom-alert {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #8b0000;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #000;
+  z-index: 2000;
+}
+
+.map-div{
+  border: 5px solid black ;
+  margin: 10px;
+  border-radius:10px;
+  box-shadow: 0 0 10px #000;
+}
+.dark{
+  background-color: #FFE5D3;
+  border-top: 3px solid #8b0000;
+}
+#1eservationForm{
+  height: auto;
+  width: 100%;
+}
